@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaPencilAlt } from "react-icons/fa";
 
 function CreateArea(props) {
   const [note, setNote] = useState({
@@ -43,7 +44,9 @@ function CreateArea(props) {
           placeholder="Take a note..."
           rows="3"
         />
-        <button onClick={submitNote}>+</button>
+        <button onClick={submitNote}>
+          <FaPencilAlt />
+        </button>
       </form>
     </div>
   );
