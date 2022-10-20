@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import Note from "./components/Note";
 import CreateArea from "./components/CreateArea";
 
@@ -38,23 +38,25 @@ function App() {
   }, [notes]);
 
   return (
-    <div className="flex-wrapper">
+    <div>
       <Header />
-      <CreateArea onAdd={addNote} />
-      <div className="note-area">
-        {notes.map((noteItem, index) => {
-          return (
-            <Note
-              key={index}
-              id={index}
-              title={noteItem.title}
-              content={noteItem.content}
-              onDelete={deleteNote}
-            />
-          );
-        })}
+      <div className="flex-wrapper">
+        <CreateArea onAdd={addNote} />
+        <div className="note-area">
+          {notes.map((noteItem, index) => {
+            return (
+              <Note
+                key={index}
+                id={index}
+                title={noteItem.title}
+                content={noteItem.content}
+                onDelete={deleteNote}
+              />
+            );
+          })}
+        </div>
+        <Footer />
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }
